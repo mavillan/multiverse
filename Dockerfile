@@ -8,11 +8,6 @@ FROM ubuntu:16.04
 # maintainer details
 MAINTAINER nallivam "nallivam@gmail.com"
 
-# add a post-invoke hook to dpkg which deletes cached deb files
-# update the sources.list
-# update/dist-upgrade
-# clear the caches
-
 RUN \
   echo 'DPkg::Post-Invoke {"/bin/rm -f /var/cache/apt/archives/*.deb || true";};' | tee /etc/apt/apt.conf.d/no-cache && \
   echo "deb http://mirror.math.princeton.edu/pub/ubuntu xenial main universe" >> /etc/apt/sources.list && \
@@ -68,6 +63,7 @@ EXPOSE 54321
 EXPOSE 54322
 EXPOSE 8888
 EXPOSE 8889
+EXPOSE 5555
 
 #ENTRYPOINT ["java", "-Xmx4g", "-jar", "/opt/h2o.jar"]
 # Define default command
