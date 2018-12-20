@@ -54,7 +54,7 @@ RUN \
   /bin/bash ~/miniconda.sh -b -p $HOME/miniconda && \
   echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> $HOME/.bashrc && \
   /bin/bash -c 'export PATH="$HOME/miniconda/bin:$PATH"' && \
-  wget https://gist.githubusercontent.com/mavillan/d88d5ed628d28ee34ae0c08d6b886ee6/raw/72828b95040c9a4e2f726a7b34356c44dbfb1c9c/ds_stack.yml && \
+  wget https://raw.githubusercontent.com/mavillan/multiverse/master/ds_stack.yml && \
   $HOME/miniconda/bin/conda env update -f ds_stack.yml && \
   $HOME/miniconda/bin/conda clean --all && \
   echo "source activate ds_stack" >> $HOME/.bashrc
