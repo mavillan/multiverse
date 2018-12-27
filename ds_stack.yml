@@ -40,6 +40,7 @@ dependencies:
   - xlrd
   - fastparquet
   - pystan
+  - fbprophet
   - scipy
   - bottleneck
   - networkx=1.11
@@ -57,7 +58,6 @@ dependencies:
       - sqlalchemy
       - sqlalchemy-teradata
       - hyperopt
-      - fbprophet
       - statsmodels
       - category_encoders
       - pyodbc
