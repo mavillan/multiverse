@@ -13,12 +13,11 @@ RUN \
   echo "deb http://mirror.math.princeton.edu/pub/ubuntu xenial main universe" >> /etc/apt/sources.list && \
   apt-get update -q -y && \
   apt-get dist-upgrade -y && \
-  apt-get install -y sudo vim htop git && \ 
   apt-get clean && \
   apt-get autoremove && \
   rm -rf /var/cache/apt/* && \
 
-# Install Oracle Java 8
+# Install other packages + Oracle Java 8
   DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip htop iputils-ping curl sudo vim git build-essential python-pip unixodbc-dev lib32stdc++6 software-properties-common python-software-properties && \
   add-apt-repository -y ppa:webupd8team/java && \
   apt-get update -q && \
