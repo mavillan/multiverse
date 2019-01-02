@@ -32,6 +32,7 @@ dependencies:
   - jupyter_nbextensions_configurator
   - jupyterlab
   - jupyterlab_launcher
+  - nodejs
   - ipykernel
   - nb_conda_kernels
   - tensorflow==1.8.0
