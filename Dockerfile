@@ -56,7 +56,7 @@ RUN \
   wget https://raw.githubusercontent.com/mavillan/multiverse/master/ds_stack.yml && \
   $HOME/miniconda/bin/conda env update -f ds_stack.yml && \
   $HOME/miniconda/bin/conda clean --all && \
-  echo "source activate ds_stack" >> $HOME/.bashrc
+  echo "source activate ds_stack" >> $HOME/.bashrc && \
   $HOME/miniconda/envs/ds_stack/bin/jupyter labextension install @jupyterlab/plotly-extension
 
 EXPOSE 54321
