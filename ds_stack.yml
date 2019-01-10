@@ -55,6 +55,7 @@ dependencies:
       - jupyterlab-discovery
       - JayDeBeApi
       - stldecompose
+      - seasonal
       - plotly
       - sqlalchemy
       - sqlalchemy-teradata
