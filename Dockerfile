@@ -18,7 +18,7 @@ RUN \
   rm -rf /var/cache/apt/* && \
 
 # Install other packages + Oracle Java 8
-  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip htop iputils-ping curl sudo vim git build-essential python-pip unixodbc-dev lib32stdc++6 software-properties-common python-software-properties && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip htop iputils-ping curl sudo vim git build-essential python-pip unixodbc-dev lib32stdc++6 software-properties-common python-software-properties screen && \
   add-apt-repository -y ppa:webupd8team/java && \
   apt-get update -q && \
   echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
