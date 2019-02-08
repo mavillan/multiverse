@@ -64,3 +64,4 @@ dependencies:
       - category_encoders
       - pyodbc
       - psycopg2-binary
+      - catboost
