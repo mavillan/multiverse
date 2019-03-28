@@ -65,3 +65,6 @@ dependencies:
       - pyodbc
       - psycopg2-binary
       - catboost
+      - lightgbm
+      - xgboost
+      - featuretools
