@@ -68,3 +68,4 @@ dependencies:
       - lightgbm
       - xgboost
       - featuretools
+      - Boruta
