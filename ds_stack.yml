@@ -48,22 +48,23 @@ dependencies:
   - widgetsnbextension
   - ipywidgets
   - pip:
+      - sqlalchemy
+      - sqlalchemy-teradata
+      - JayDeBeApi
+      - pyodbc
+      - mysql-connector-python
+      - psycopg2-binary
       - dash
       - dash_core_components
       - dash_html_components
       - dash-table
       - jupyterlab-discovery
-      - JayDeBeApi
       - stldecompose
       - seasonal
       - plotly
-      - sqlalchemy
-      - sqlalchemy-teradata
       - hyperopt
       - statsmodels
       - category_encoders
-      - pyodbc
-      - psycopg2-binary
       - catboost
       - lightgbm
       - xgboost
