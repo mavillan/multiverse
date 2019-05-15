@@ -4,9 +4,9 @@ channels:
   - conda-forge
   - h2oai
 dependencies:
-  - python=3.6
-  - numpy=1.15.*
-  - pandas=0.23.*
+  - python=3.7
+  - numpy
+  - pandas=0.24.*
   - flask
   - dask
   - distributed
@@ -52,6 +52,7 @@ dependencies:
       - sqlalchemy-teradata
       - JayDeBeApi
       - pyodbc
+      - mysql
       - mysql-connector-python
       - psycopg2-binary
       - dash

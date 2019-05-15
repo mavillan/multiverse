@@ -17,13 +17,8 @@ RUN \
   apt-get autoremove && \
   rm -rf /var/cache/apt/* && \
 
-# Install other packages + Oracle Java 8
-  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip htop iputils-ping curl sudo vim git build-essential python-pip unixodbc-dev lib32stdc++6 software-properties-common python-software-properties screen && \
-  add-apt-repository -y ppa:webupd8team/java && \
-  apt-get update -q && \
-  echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-  echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -y oracle-java8-installer && \
+# Install other packages + openjdk-8
+  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc-dev lib32stdc++6 software-properties-common python-software-properties screen && \
   apt-get clean && \
   apt-get autoremove && \
 
@@ -64,9 +59,6 @@ EXPOSE 54322
 EXPOSE 8888
 EXPOSE 8889
 EXPOSE 5555
-
-#ENTRYPOINT ["java", "-Xmx4g", "-jar", "/opt/h2o.jar"]
-# Define default command
 
 CMD \
   ["/bin/bash"]
