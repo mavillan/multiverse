@@ -35,8 +35,8 @@ dependencies:
   - nodejs
   - ipykernel
   - nb_conda_kernels
-  - tensorflow==1.8.0
-  - keras==2.1.6
+  - tensorflow
+  - keras
   - ipython
   - xlrd
   - fastparquet
