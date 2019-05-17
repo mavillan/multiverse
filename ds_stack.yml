@@ -2,11 +2,10 @@ name: ds_stack
 channels:
   - default
   - conda-forge
-  - h2oai
 dependencies:
   - python=3.7
   - numpy
-  - pandas=0.24.*
+  - pandas
   - flask
   - dask
   - distributed
@@ -14,7 +13,6 @@ dependencies:
   - cython
   - numba
   - pip
-  - h2o
   - feather-format
   - matplotlib
   - seaborn
@@ -48,6 +46,7 @@ dependencies:
   - widgetsnbextension
   - ipywidgets
   - pip:
+      - h2o
       - sqlalchemy
       - sqlalchemy-teradata
       - JayDeBeApi

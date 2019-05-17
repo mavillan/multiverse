@@ -9,32 +9,16 @@ FROM ubuntu:16.04
 MAINTAINER nallivam "nallivam@gmail.com"
 
 RUN \
-  echo 'DPkg::Post-Invoke {"/bin/rm -f /var/cache/apt/archives/*.deb || true";};' | tee /etc/apt/apt.conf.d/no-cache && \
-  echo "deb http://mirror.math.princeton.edu/pub/ubuntu xenial main universe" >> /etc/apt/sources.list && \
+  echo 'DPkg::Post-Invoke {"/bin/rm -f /var/cache/apt/archives/*.deb || true";};' | tee /etc/apt/apt.conf.d/no-cache && \ 
   apt-get update -q -y && \
   apt-get dist-upgrade -y && \
-  apt-get clean && \
-  apt-get autoremove && \
   rm -rf /var/cache/apt/* && \
-
+  rm -rf /var/lib/apt/lists/* && \
+  apt-get update -q -y && \
 # Install other packages + openjdk-8
-  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc-dev lib32stdc++6 software-properties-common python-software-properties screen && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc-dev lib32stdc++6 libmysqlclient-dev software-properties-common python-software-properties screen && \
   apt-get clean && \
   apt-get autoremove && \
-
-# Fetch h2o latest_stable
-  wget http://h2o-release.s3.amazonaws.com/h2o/latest_stable -O latest && \
-  wget --no-check-certificate -i latest -O /opt/h2o.zip && \
-  unzip -d /opt /opt/h2o.zip && \
-  rm /opt/h2o.zip && \
-  cd /opt && \
-  cd `find . -name 'h2o.jar' | sed 's/.\///;s/\/h2o.jar//g'` && \ 
-  cp h2o.jar /opt && \
-  /usr/bin/pip install `find . -name "*.whl"` && \
-  cd / && \
-  wget https://raw.githubusercontent.com/h2oai/h2o-3/master/docker/start-h2o-docker.sh && \
-  chmod +x start-h2o-docker.sh && \
-
 # Adding a local user
   useradd -ms /bin/bash turing && \
   usermod -aG sudo turing
