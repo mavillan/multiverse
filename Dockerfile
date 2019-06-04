@@ -16,7 +16,7 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   apt-get update -q -y && \
 # Install other packages + openjdk-8
-  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc-dev lib32stdc++6 libmysqlclient-dev software-properties-common python-software-properties screen && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc unixodbc-dev lib32stdc++6 libmysqlclient-dev software-properties-common python-software-properties screen && \
   apt-get clean && \
   apt-get autoremove && \
 # Adding a local user
