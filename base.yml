@@ -1,4 +1,4 @@
-name: ds_stack
+name: base
 channels:
   - default
   - conda-forge
