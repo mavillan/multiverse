@@ -3,7 +3,7 @@
 ########################################################################
 
 # pull base image
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # maintainer details
 MAINTAINER nallivam "nallivam@gmail.com"
