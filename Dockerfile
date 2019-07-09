@@ -14,11 +14,11 @@ RUN \
   apt-get dist-upgrade -y && \
   apt-get clean && \
   rm -rf /var/cache/apt/* && \
-# Install other packages + openjdk-8
+  # Install other packages + openjdk-8
   DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc unixodbc-dev lib32stdc++6 libmysqlclient-dev software-properties-common python-software-properties screen && \
   apt-get clean && \
   apt-get autoremove && \
-# Adding a local user
+  # Adding a local user
   useradd -ms /bin/bash turing && \
   usermod -aG sudo turing
 
@@ -26,7 +26,7 @@ USER turing
 WORKDIR /home/turing
 
 RUN \
-# Installation of python packages from anaconda and pip  
+  # Installation of python packages from anaconda and pip  
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
   /bin/bash ~/miniconda.sh -b -p $HOME/miniconda && \
   echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> $HOME/.bashrc && \
@@ -36,7 +36,7 @@ RUN \
   $HOME/miniconda/bin/conda env update -f base.yml && \
   $HOME/miniconda/bin/pip install -r requirements.txt && \
   $HOME/miniconda/bin/conda clean --all && \
-  echo "source activate ds_stack" >> $HOME/.bashrc && \
+  echo "source activate ds_stack" >> $HOME/.bashrc
 
 EXPOSE 54321
 EXPOSE 54322
