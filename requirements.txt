@@ -1,7 +1,6 @@
 h2o
 sqlalchemy
 sqlalchemy-teradata
-JayDeBeApi
 pyodbc
 mysql
 mysql-connector-python
