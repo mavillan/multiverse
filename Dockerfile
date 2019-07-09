@@ -31,8 +31,10 @@ RUN \
   /bin/bash ~/miniconda.sh -b -p $HOME/miniconda && \
   echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> $HOME/.bashrc && \
   /bin/bash -c 'export PATH="$HOME/miniconda/bin:$PATH"' && \
-  wget https://raw.githubusercontent.com/mavillan/multiverse/master/ds_stack.yml && \
-  $HOME/miniconda/bin/conda env update -f ds_stack.yml && \
+  wget https://raw.githubusercontent.com/mavillan/multiverse/master/base.yml && \
+  wget https://raw.githubusercontent.com/mavillan/multiverse/master/requirements.txt && \
+  $HOME/miniconda/bin/conda env update -f base.yml && \
+  $HOME/miniconda/bin/pip install -r requirements.txt && \
   $HOME/miniconda/bin/conda clean --all && \
   echo "source activate ds_stack" >> $HOME/.bashrc && \
   $HOME/miniconda/envs/ds_stack/bin/jupyter labextension install @jupyterlab/plotly-extension
