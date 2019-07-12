@@ -1,3 +1,9 @@
+keras
+tensorflow
+tensorboard
+pystan
+fbprophet
+networkx=1.11
 h2o
 sqlalchemy
 sqlalchemy-teradata
