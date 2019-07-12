@@ -34,6 +34,7 @@ RUN \
   wget https://raw.githubusercontent.com/mavillan/multiverse/master/base.yml && \
   wget https://raw.githubusercontent.com/mavillan/multiverse/master/requirements.txt && \
   $HOME/miniconda/bin/conda env update -f base.yml && \
+  pip install --upgrade pip && \
   $HOME/miniconda/bin/pip install -r requirements.txt && \
   $HOME/miniconda/bin/conda clean --all && \
   echo "source activate ds_stack" >> $HOME/.bashrc
