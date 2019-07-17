@@ -32,12 +32,14 @@ RUN \
   echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> $HOME/.bashrc && \
   /bin/bash -c 'export PATH="$HOME/miniconda/bin:$PATH"' && \
   wget https://raw.githubusercontent.com/mavillan/multiverse/master/base.yml && \
+  wget https://raw.githubusercontent.com/mavillan/multiverse/master/requirements_forge.txt &&
   wget https://raw.githubusercontent.com/mavillan/multiverse/master/requirements.txt && \
   $HOME/miniconda/bin/conda env update -f base.yml && \
-  pip install --upgrade pip && \
+  $HOME/miniconda/bin/conda install -y -c conda-forge --file requirements_forge.txt && \
+  $HOME/miniconda/bin/pip install --upgrade pip && \
   $HOME/miniconda/bin/pip install -r requirements.txt && \
   $HOME/miniconda/bin/conda clean --all && \
-  echo "source activate ds_stack" >> $HOME/.bashrc
+  echo "source activate" >> $HOME/.bashrc
 
 EXPOSE 54321
 EXPOSE 54322

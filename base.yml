@@ -10,7 +10,6 @@ dependencies:
   - joblib
   - cython
   - numba
-  - pip
   - matplotlib
   - seaborn
   - pep8
@@ -28,3 +27,5 @@ dependencies:
   - bottleneck
   - widgetsnbextension
   - ipywidgets
+  - gcc
+

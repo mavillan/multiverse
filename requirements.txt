@@ -1,9 +1,7 @@
 keras
 tensorflow
 tensorboard
-pystan
-fbprophet
-networkx=1.11
+networkx
 h2o
 sqlalchemy
 sqlalchemy-teradata
@@ -11,14 +9,12 @@ pyodbc
 mysql
 mysql-connector-python
 psycopg2-binary
+plotly
 dash
-dash_core_components
-dash_html_components
-dash-table
+dash-daq
 jupyterlab-discovery
 stldecompose
 seasonal
-plotly
 hyperopt
 statsmodels
 category_encoders
