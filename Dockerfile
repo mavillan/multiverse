@@ -32,7 +32,7 @@ RUN \
   echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> $HOME/.bashrc && \
   /bin/bash -c 'export PATH="$HOME/miniconda/bin:$PATH"' && \
   wget https://raw.githubusercontent.com/mavillan/multiverse/master/base.yml && \
-  wget https://raw.githubusercontent.com/mavillan/multiverse/master/requirements_forge.txt &&
+  wget https://raw.githubusercontent.com/mavillan/multiverse/master/requirements_forge.txt && \
   wget https://raw.githubusercontent.com/mavillan/multiverse/master/requirements.txt && \
   $HOME/miniconda/bin/conda env update -f base.yml && \
   $HOME/miniconda/bin/conda install -y -c conda-forge --file requirements_forge.txt && \
