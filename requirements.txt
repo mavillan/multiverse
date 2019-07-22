@@ -28,3 +28,4 @@ jupyter_highlight_selected_word
 jupyter_nbextensions_configurator
 jupyter_contrib_nbextensions
 twine
+zope.interface

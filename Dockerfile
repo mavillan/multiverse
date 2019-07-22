@@ -10,10 +10,7 @@ MAINTAINER nallivam "nallivam@gmail.com"
 
 RUN \
   echo 'DPkg::Post-Invoke {"/bin/rm -f /var/cache/apt/archives/*.deb || true";};' | tee /etc/apt/apt.conf.d/no-cache && \
-  apt-get update -q -y && \
-  apt-get dist-upgrade -y && \
-  apt-get clean && \
-  rm -rf /var/cache/apt/* && \
+  apt-get update -y && \
   # Install other packages + openjdk-8
   DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc unixodbc-dev lib32stdc++6 libmysqlclient-dev software-properties-common python-software-properties screen && \
   apt-get clean && \
