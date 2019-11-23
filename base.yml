@@ -1,6 +1,7 @@
 name: base
 channels:
   - default
+  - anaconda
 dependencies:
   - numpy
   - pandas
@@ -28,4 +29,3 @@ dependencies:
   - widgetsnbextension
   - ipywidgets
   - gcc
-
