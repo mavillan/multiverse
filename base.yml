@@ -18,12 +18,11 @@ dependencies:
   - scikit-image
   - nose
   - nodejs
-  - ipykernel
   - ipython
+  - ipywidgets
   - xlrd
   - fastparquet
   - scipy
   - bottleneck
-  - widgetsnbextension
-  - ipywidgets
   - gcc
+  - libgcc
