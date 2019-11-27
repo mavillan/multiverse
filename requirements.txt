@@ -24,7 +24,6 @@ xgboost
 featuretools
 Boruta
 twine
-zope.interface
 tsforest
 ipykernel
 jupyter
