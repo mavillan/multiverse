@@ -36,13 +36,7 @@ RUN \
   $HOME/miniconda/bin/pip install --upgrade pip && \
   $HOME/miniconda/bin/pip install -r requirements.txt && \
   $HOME/miniconda/bin/conda clean --all && \
-  echo "source activate" >> $HOME/.bashrc && \
-  # Installation of lightgbm from source
-  git clone --recursive https://github.com/microsoft/LightGBM ; cd LightGBM && \
-  mkdir build ; cd build && \
-  cmake .. && \
-  make -j4 && \
-  cd ../python-package ; python setup.py install --precompile
+  echo "source activate" >> $HOME/.bashrc 
 
 EXPOSE 54321
 EXPOSE 54322
