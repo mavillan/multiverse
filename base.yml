@@ -22,7 +22,6 @@ dependencies:
   - ipywidgets
   - xlrd
   - fastparquet
+  - pyarrow
   - scipy
   - bottleneck
-  - gcc
-  - libgcc

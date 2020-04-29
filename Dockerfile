@@ -1,5 +1,5 @@
 ########################################################################
-# Dockerfile for Oracle JDK 8 on Ubuntu 16.04
+# Dockerfile Multiverse Python
 ########################################################################
 
 # pull base image
@@ -12,7 +12,7 @@ RUN \
   echo 'DPkg::Post-Invoke {"/bin/rm -f /var/cache/apt/archives/*.deb || true";};' | tee /etc/apt/apt.conf.d/no-cache && \
   apt-get update -y && \
   # Install other packages + openjdk-8
-  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc unixodbc-dev lib32stdc++6 libmysqlclient-dev software-properties-common python-software-properties screen && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -y wget unzip openjdk-8-jdk htop iputils-ping curl sudo vim git build-essential python-pip unixodbc unixodbc-dev lib32stdc++6 libmysqlclient-dev software-properties-common python-software-properties screen cmake && \
   apt-get clean && \
   apt-get autoremove && \
   # Adding a local user
@@ -36,7 +36,13 @@ RUN \
   $HOME/miniconda/bin/pip install --upgrade pip && \
   $HOME/miniconda/bin/pip install -r requirements.txt && \
   $HOME/miniconda/bin/conda clean --all && \
-  echo "source activate" >> $HOME/.bashrc
+  echo "source activate" >> $HOME/.bashrc && \
+  # Installation of lightgbm from source
+  git clone --recursive https://github.com/microsoft/LightGBM ; cd LightGBM && \
+  mkdir build ; cd build && \
+  cmake .. && \
+  make -j4 && \
+  cd ../python-package ; python setup.py install --precompile
 
 EXPOSE 54321
 EXPOSE 54322
